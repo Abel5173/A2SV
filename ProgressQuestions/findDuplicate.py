@@ -1,11 +1,20 @@
 class Solution:
     def findDuplicate(self, paths: List[str]) -> List[List[str]]:
-        dp = {}
-        for i in paths:
-            path = i.split()
-            for j in range(1, len(path)):
-                file = path[j].split('(')
-                if file[1] in dp:
-                    dp[file[1]].append(path[0] + '/' + file[0])
+        d = {}
+        for path in paths:
+            k = path.split(" ")
+            l = []
+            for i in range(1, len(k)):
+                t = k[i].split("(")
+                if t[1] in d:
+                    d[t[1]].append(f'{k[0]}/{t[0]}')  
                 else:
-                    dp[file[1]] = [path[0] + '/' + file[0]]
+                    d[t[1]] = [f'{k[0]}/{t[0]}'] 
+        
+        l =[]
+        for i in d.values():
+            if len(i)>1:
+                l.append(i)
+                
+        print(l)
+        return l
