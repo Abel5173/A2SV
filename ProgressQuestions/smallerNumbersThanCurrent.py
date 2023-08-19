@@ -8,3 +8,4 @@ class Solution:
                     cnt += 1
             l.append(cnt)
         return l
+    
