@@ -1,6 +1,5 @@
 import collections
 
-
 class Solution:
     def subdomainVisits(self, cpdomains: List[str]) -> List[str]:
         counts = collections.defaultdict(int)
