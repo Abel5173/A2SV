@@ -1,3 +1,4 @@
+import math
 class Solution:
     def judgeSquareSum(self, c: int) -> bool:
         a = 0
