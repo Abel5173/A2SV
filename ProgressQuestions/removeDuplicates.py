@@ -1,10 +1,7 @@
-class Solution:
-    def removeDuplicates(self, nums: List[int]) -> int:
-        length = len(nums)
-        s = set(nums)
-        s_len = len(s)
-        ans = list(s)
-        for i in range(length - s_len):
-            ans.append('_')
-        return s_len, ans
-    #  5, nums = [0,1,2,3,4,_,_,_,_,_]
+nums = [0,0,1,1,1,2,2,3,3,4]
+j = 0
+for i in range(1, len(nums)):
+    if nums[j] != nums[i]:
+        j += 1
+        nums[j] = nums[i]
+print(j + 1)
